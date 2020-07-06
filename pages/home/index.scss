@@ -1,0 +1,61 @@
+.home_system {
+    .nnt_info {
+        padding: 20px;
+
+        .el-row {
+            margin-bottom: 20px;
+        }
+
+        .el-row:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .nnt_li {
+        background: #fff;
+        box-shadow: 0 0 10px #d0d0d0;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 14px;
+        color: #313131;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    @media screen and (max-width: 768px) {
+        .nnt_li {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .nnt_info {
+            padding: 0 20px;
+
+            .el-row {
+                margin-bottom: 10px;
+
+            }
+        }
+
+        .el-divider {
+            white-space: nowrap;
+        }
+    }
+
+    .nnt_config_log {
+        margin-top: 40px;
+    }
+
+    .nnt_content {
+        padding: 0 20px 20px;
+    }
+
+
+    .nnt_people_info {
+        padding: 20px 0 0 20px;
+        color: #313131;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "list": [
+        {
+            "label": "头像",
+            "field": "avatar",
+            "slot": true,
+            "width": 150
+        },
+        {
+            "label": "姓名",
+            "field": "user_name",
+            "width": 100
+        },
+        {
+            "label": "性别",
+            "field": "sex_f",
+            "width": 100
+        },
+        {
+            "label": "年龄",
+            "field": "age",
+            "width": 100
+        },
+        {
+            "label": "电话",
+            "field": "tel",
+            "width": 150
+        },
+        {
+            "label": "权限",
+            "field": "permissions_f",
+            "width": 150
+        },
+        {
+            "label": "地址",
+            "field": "address"
+        },
+        {
+            "label": "出生日期",
+            "field": "birth_date_d"
+        },
+        {
+            "label": "创建时间",
+            "field": "create_date_f",
+            "width": "160"
+        }
+    ],
+    "data": [],
+    "listLoading": false
+}

@@ -1,0 +1,74 @@
+.paginationView {
+    position: relative;
+    height: 60px;
+    width: 100%;
+}
+
+.paginationView .el-pagination {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, 0);
+    display: inline-block;
+}
+
+.paginationView.isFixed {
+    position: fixed;
+    left: 210px;
+    bottom: 0;
+    background: #fff;
+    width: calc(100% - 210px);
+    // box-shadow: 0 0 10px #d0d0d0;
+    // box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
+    z-index: 100;
+    transition: all 0.28s;
+}
+
+.hideSidebar {
+    .paginationView.isFixed {
+        left: 54px;
+        width: calc(100% - 54px);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .paginationView.isFixed {
+        left: 0;
+        width: 100vw;
+    }
+
+    .paginationView {
+        .el-pagination__jump {
+            margin-left: 0;
+        }
+    }
+
+    // .tableView {
+    //     .el-table {
+    //         font-size: 12px !important;
+
+    //         * {
+    //             font-size: 12px !important;
+    //         }
+    //     }
+    // }
+}
+
+.isFixedPlaceholder {
+    width: 100%;
+    height: 60px;
+}
+
+.today-row,
+.today-row td {
+    background: oldlace !important;
+    border-bottom: 1px solid #f5abab !important;
+}
+
+.yesterday-row,
+.yesterday-row td {
+    background: rgb(228, 255, 203) !important;
+    border-bottom: 1px solid rgb(137, 250, 32) !important;
+}

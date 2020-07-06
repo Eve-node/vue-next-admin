@@ -1,0 +1,32 @@
+{
+    "scripts": {
+        "dev": "NODE_ENV=dev nuxt",
+        "qa": "NODE_ENV=qa nuxt",
+        "prod": "NODE_ENV=prod nuxt",
+        "build": "cross-env NODE_ENV=prod nuxt build",
+        "qa:build": "cross-env NODE_ENV=qa nuxt build",
+        "start": "cross-env NODE_ENV=prod pm2 start nuxt --name vue-next-admin -- start",
+        "qa:start": "cross-env NODE_ENV=qa pm2 start nuxt --name vue-next-admin -- start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "axios": "^0.19.0",
+        "echarts": "^4.5.0",
+        "element-ui": "^2.4.11",
+        "image-conversion": "^1.1.9",
+        "js-cookie": "^2.2.1",
+        "normalize.css": "^8.0.1",
+        "nprogress": "^0.2.0",
+        "nuxt": "^2.0.0"
+    },
+    "devDependencies": {
+        "cross-env": "^6.0.3",
+        "css-loader": "^3.2.0",
+        "node-sass": "^4.13.0",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^7.3.1",
+        "style-loader": "^1.0.0",
+        "svg-sprite-loader": "4.1.3",
+        "vue-particles": "^1.0.9"
+    }
+}

@@ -1,0 +1,129 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+
+body {
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+        Microsoft YaHei, Arial, sans-serif;
+    min-width: 1200px;
+}
+
+@media screen and (max-width: 768px) {
+    // 暂时注释掉
+    // * {
+    //     font-size: 12px !important;
+    // }
+
+    .el-upload-dragger {
+        width: 209px;
+
+        .el-icon-plus {
+            font-size: 50px !important;
+            line-height: 178px;
+            color: #606266;
+        }
+
+        .table_img {
+            display: block;
+            margin: 39px auto 0;
+        }
+    }
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: ' ';
+        clear: both;
+        height: 0;
+    }
+}
+
+// main-container global css
+.app-container {
+    padding: 20px;
+}
+
+.nnt_table_header {
+    overflow: hidden;
+
+    .el-input {
+        width: 200px;
+        margin-right: 10px;
+    }
+
+    .el-select {
+        width: 200px !important;
+        margin-right: 10px;
+    }
+
+    .nnt_left {
+        float: left;
+    }
+
+    .nnt_right {
+        float: right;
+    }
+
+    margin-bottom: 20px;
+}
+
+.nnt_table_img {
+    width: 100px;
+    height: 100px;
+}
+
+.table_img {
+    width: 100px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16)
+}
+
+.el-drawer__header span {
+    &:focus {
+        outline: 0;
+    }
+}

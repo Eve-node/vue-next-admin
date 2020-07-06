@@ -1,0 +1,20 @@
+{
+    "list": [
+        {
+            "label": "操作人",
+            "field": "name"
+        },
+        {
+            "label": "内容",
+            "field": "content"
+        },
+        {
+            "label": "创建时间",
+            "field": "create_date_f",
+            "width": "160"
+        }
+    ],
+    "border": true,
+    "data": [],
+    "listLoading": false
+}
