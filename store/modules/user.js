@@ -1,6 +1,6 @@
 import accountCustomer from '@/api/account/basics';
 import { getToken, setToken, removeToken } from '@/utils/auth';
-import routes from '@/data/router';
+import routes from '@/router';
 const state = {
     token: getToken(),
     name: '',
@@ -126,83 +126,15 @@ const actions = {
                     if (!process.client) {
                         return false;
                     }
-                    if (!res) {
-                        dispatch('logout');
-                        return false;
-                    }
-                    commit('SET_NAME', res.nick_name);
-                    commit('SET_AVATAR', res.avatar);
-                    commit('SET_TEL', res.tel);
-                    commit('Set_Permissions', res.permissions);
-                    commit('Set_Permissions_Name', res.permissions_f);
+                    commit('SET_NAME', '小明');
+                    commit(
+                        'SET_AVATAR',
+                        'http://up.enterdesk.com/edpic/31/c3/fd/31c3fdc63511cabedd6415d121fa2d58.jpg'
+                    );
+                    commit('SET_TEL', 'xxxx');
 
-                    let path = $nuxt.$route.path;
-                    routes.forEach(group => {
-                        group.name = Math.random().toString();
-                        if (group.children) {
-                            group.children.forEach(item => {
-                                item.name = Math.random().toString();
-                            });
-                        }
-                    });
-                    if (res.permissions > 2) {
-                        // 超级管理员
-                        commit('Set_Routes', routes);
-                    } else {
-                        let routerList = JSON.parse(JSON.stringify(routes));
-                        let newRouter = [];
-                        let isMatching = false;
-                        let fristPath = '';
-                        routerList.forEach(group => {
-                            let children = [];
-                            if (group.children) {
-                                group.children.forEach(elm => {
-                                    res.routerList.forEach(item => {
-                                        if (item.path == elm.alias) {
-                                            if (elm.alias == path) {
-                                                console.log(elm.alias, path);
-                                                isMatching = true;
-                                            }
-                                            !fristPath &&
-                                                (fristPath = elm.alias);
-                                            children.push(elm);
-                                        }
-                                    });
-                                });
-                                if (children.length > 0) {
-                                    newRouter.push({
-                                        ...group,
-                                        children
-                                    });
-                                }
-                            } else {
-                                res.routerList.forEach(item => {
-                                    if (group.alias == item.path) {
-                                        if (group.alias == path) {
-                                            console.log(group.alias, path);
-                                            isMatching = true;
-                                        }
-
-                                        !fristPath && (fristPath = group.alias);
-
-                                        newRouter.push(group);
-                                    }
-                                });
-                            }
-                        });
-
-
-                        if (
-                            !isMatching &&
-                            !/account\/form/.test(window.location.pathname)
-                        ) {
-                            $nuxt.$router.replace({
-                                path: fristPath ? fristPath : '/error'
-                            });
-                        }
-
-                        commit('Set_Routes', newRouter);
-                    }
+                    // 超级管理员
+                    commit('Set_Routes', routes);
 
                     commit('Set_Finish_Load', true);
                     resolve(res);

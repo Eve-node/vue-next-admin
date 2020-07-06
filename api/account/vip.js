@@ -113,7 +113,7 @@ class _C {
     }
 
     /**
-     * 药店会员列表
+     * 会员列表
      *
      * @static
      * @param {*} data

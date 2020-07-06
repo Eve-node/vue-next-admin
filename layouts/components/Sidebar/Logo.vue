@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import defaultSettings from '@/settings';
 export default {
     name: 'SidebarLogo',
     props: {
@@ -37,8 +38,8 @@ export default {
     },
     data() {
         return {
-            title: 'XX - 后台管理系统',
-            logo: ''
+            title: defaultSettings.title,
+            logo: defaultSettings.logo
         };
     }
 };

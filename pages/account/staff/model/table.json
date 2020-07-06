@@ -27,11 +27,6 @@
             "width": 150
         },
         {
-            "label": "权限",
-            "field": "permissions_f",
-            "width": 150
-        },
-        {
             "label": "地址",
             "field": "address"
         },

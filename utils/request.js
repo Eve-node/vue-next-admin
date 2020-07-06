@@ -40,38 +40,12 @@ service.interceptors.response.use(
         const res = response.data;
 
         if (res.code !== 200) {
-            if (/time/.test(res.msg)) {
-                res.msg = '网络出现问题，请求超时~';
-            }
-
-            if (/登录|参数错误/.test(res.msg)) {
-                if (process.client) {
-                    $nuxt.$store.dispatch('user/logout');
-
-                    let messages = document.querySelectorAll('.el-message');
-                    let hasMsg = false;
-                    for (let i = 0; i < messages.length; i++) {
-                        let elm = messages[i];
-                        if (/登录/.test(elm.innerText)) {
-                            hasMsg = true;
-                            return false;
-                        }
-                    }
-                    if (!hasMsg) {
-                        Message({
-                            message: res.msg,
-                            type: 'warning',
-                            duration: 5 * 1000
-                        });
-                    }
-                }
-            } else {
-                Message({
-                    message: res.msg || '业务处理异常',
-                    type: 'error',
-                    duration: 5 * 1000
-                });
-            }
+            // 如果做鉴权可以放开此处
+            Message({
+                message: '业务处理异常',
+                type: 'error',
+                duration: 5 * 1000
+            });
 
             return Promise.reject(new Error(res.msg || 'Error'));
         } else {
@@ -83,7 +57,7 @@ service.interceptors.response.use(
         if (typeof error == 'object') {
             // $nuxt.$store.dispatch('user/logout');
             Message({
-                message: '网络异常，请重新登录',
+                message: '网络异常，请自己开发接口！',
                 type: 'error',
                 duration: 5 * 1000
             });
@@ -99,17 +73,15 @@ service.interceptors.response.use(
     }
 );
 
-// https://yangoods.cn/api/wr/manage/
-
-let point = {
+const point = {
     dev: {
-        sso: 'http://xxx.cn/api-dev/',
+        sso: 'http://next.com/api-dev/'
     },
     qa: {
-        default: 'https://xxx.cn/api-qa/',
+        default: 'https://next.com/api-qa/'
     },
     pro: {
-        default: 'https://xxx.cn/api/'
+        default: 'https://next.com/api/'
     }
 };
 

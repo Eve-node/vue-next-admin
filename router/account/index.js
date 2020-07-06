@@ -4,9 +4,9 @@ export default [
         meta: { title: '用户资料系统', icon: 'account' },
         children: [
             {
-                alias: '/account/store',
-                path: 'store',
-                meta: { title: '药店会员资料', icon: 'vip' }
+                alias: '/account/staff',
+                path: 'staff',
+                meta: { title: '员工资料', icon: 'vip' }
             }
         ]
     }

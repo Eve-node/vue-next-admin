@@ -1,11 +1,11 @@
 const { resolve } = require('path');
-const defaultSettings = require('./settings');
-let env = process.env.NODE_ENV;
+const defaultSettings = require('./settings').default;
+const env = process.env.NODE_ENV;
 
 export default {
     buildDir: `.nuxt-${env}`,
     router: {
-        base: env == 'qa' ? `/wr-qa/manage/` : `/wr/manage/`,
+        base: `/next${env == 'prod' ? '' : `-${env}`}`,
         scrollBehavior: function(to, from, savedPosition) {
             return { x: 0, y: 0 };
         }
@@ -14,14 +14,14 @@ export default {
         NODE_ENV: env
     },
     server: {
-        port: env == 'qa' ? 18888 : 8888
+        port: defaultSettings.port
     },
     mode: 'universal',
     /*
      ** Headers of the page
      */
     head: {
-        title: 'WR - 后台管理系统',
+        title: defaultSettings.title,
         meta: [
             { charset: 'utf-8' },
             {
@@ -34,13 +34,13 @@ export default {
                 content: process.env.npm_package_description || ''
             }
         ],
-        // link: [
-        //     {
-        //         rel: 'icon',
-        //         type: 'image/x-icon',
-        //         href: ''
-        //     }
-        // ]
+        link: [
+            {
+                rel: 'icon',
+                type: 'image/x-icon',
+                href: defaultSettings.ico
+            }
+        ]
     },
     /*
      ** Customize the progress-bar color

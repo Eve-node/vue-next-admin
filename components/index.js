@@ -14,8 +14,6 @@ import ElementSelect from '@/components/ElementSelect/index.vue';
 import ElementRadio from '@/components/ElementRadio/index.vue';
 // loading
 import LoadingView from '@/components/LoadingView/index.vue';
-// 空空如也
-import EmptyView from '@/components/EmptyView/index.vue';
 // 图表
 import EchartView from '@/components/EchartView/index.vue';
 
@@ -29,7 +27,6 @@ export default {
         Vue.component('ElementSelect', ElementSelect);
         Vue.component('ElementRadio', ElementRadio);
         Vue.component('LoadingView', LoadingView);
-        Vue.component('EmptyView', EmptyView);
         Vue.component('EchartView', EchartView);
     }
 };
